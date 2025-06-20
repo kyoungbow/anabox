@@ -1,0 +1,201 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bar Charts | Notika - Notika Admin Template</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- favicon
+		============================================ -->
+  <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
+  <!-- Google Fonts
+		============================================ -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+  <!-- Bootstrap CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <!-- font awesome CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  <!-- owl.carousel CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/owl.carousel.css">
+  <link rel="stylesheet" href="/static/css/owl.theme.css">
+  <link rel="stylesheet" href="/static/css/owl.transitions.css">
+  <!-- meanmenu CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/meanmenu/meanmenu.min.css">
+  <!-- animate CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <!-- normalize CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <!-- wave CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/wave/waves.min.css">
+  <link rel="stylesheet" href="/static/css/wave/button.css">
+  <!-- mCustomScrollbar CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/scrollbar/jquery.mCustomScrollbar.min.css">
+  <!-- Notika icon CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/notika-custom-icon.css">
+  <!-- main CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/main.css">
+  <!-- style CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- responsive CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/responsive.css">
+  <!-- modernizr JS
+		============================================ -->
+  <script src="/static/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href="/static/css/dialog/sweetalert2.min.css">
+  <link rel="stylesheet" href="/static/css/dialog/dialog.css">
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <!-- Start Header Top Area -->
+  {% include "header.html" %}
+  <!-- End Header Top Area -->
+  <!-- Mobile Menu start -->
+  {% include "topMenu.html" %}
+  <!-- Breadcomb area Start-->
+
+  <!-- Breadcomb area End-->
+  <!-- Bar Chart area End-->
+  <div class="bar-chart-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="accordion-wn-wp">
+            <div class="accordion-hd" style="display: flex; align-items: center; justify-content: space-between;">
+              <h2 style="margin: 0;">공급/수급 통계</h2>
+
+              <div style="display: flex; align-items: center; gap: 20px;">
+                <!-- 선사별 -->
+                <label
+                  style="margin: 0; font-weight: normal; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                  <input type="checkbox" id="checkbox-shipping" />
+                  선사별
+                </label>
+                <select id="dropdown-shipping" style="display:none; padding: 4px 8px; width: 130px;">
+                  
+                </select>
+
+                <!-- 항만별 -->
+                <label
+                  style="margin: 0; font-weight: normal; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                  <input type="checkbox" id="checkbox-port" />
+                  항만별
+                </label>
+                <select id="dropdown-port" style="display:none; padding: 4px 8px; width: 130px;">
+                  
+                </select>
+
+                <!-- 연도 -->
+                <p style="padding: 0 0 0 15px;">연도</p>
+                <select id="year-dropdown" style="padding: 4px 8px; width: 100px;">
+                  
+                </select>
+                <button class="btn btn-info notika-btn-info btn-sm waves-effect"
+                    style="float: right;" type="button" id="btnStats">
+                    조회
+                </button>
+              </div>
+            </div>
+
+            <div class="bar-chart-wp" style="margin-top: 20px;">
+              <canvas height="100vh" width="180vw" id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bar Chart area End-->
+  <!-- Start Footer area-->
+  {% include "footer.html" %}
+  <!-- End Footer area-->
+  <!-- jquery
+		============================================ -->
+  <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+  <!-- bootstrap JS
+		============================================ -->
+  <script src="/static/js/bootstrap.min.js"></script>
+  <!-- wow JS
+		============================================ -->
+  <script src="/static/js/wow.min.js"></script>
+  <!-- price-slider JS
+		============================================ -->
+  <script src="/static/js/jquery-price-slider.js"></script>
+  <!-- owl.carousel JS
+		============================================ -->
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <!-- scrollUp JS
+		============================================ -->
+  <script src="/static/js/jquery.scrollUp.min.js"></script>
+  <!-- meanmenu JS
+		============================================ -->
+  <script src="/static/js/meanmenu/jquery.meanmenu.js"></script>
+  <!-- counterup JS
+		============================================ -->
+  <script src="/static/js/counterup/jquery.counterup.min.js"></script>
+  <script src="/static/js/counterup/waypoints.min.js"></script>
+  <script src="/static/js/counterup/counterup-active.js"></script>
+  <!-- mCustomScrollbar JS
+		============================================ -->
+  <script src="/static/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- sparkline JS
+		============================================ -->
+  <script src="/static/js/sparkline/jquery.sparkline.min.js"></script>
+  <script src="/static/js/sparkline/sparkline-active.js"></script>
+  <!-- flot JS
+		============================================ -->
+  <script src="/static/js/flot/jquery.flot.js"></script>
+  <script src="/static/js/flot/jquery.flot.resize.js"></script>
+  <script src="/static/js/flot/flot-active.js"></script>
+  <!-- knob JS
+		============================================ -->
+  <script src="/static/js/knob/jquery.knob.js"></script>
+  <script src="/static/js/knob/jquery.appear.js"></script>
+  <script src="/static/js/knob/knob-active.js"></script>
+  <!--  Chat JS
+		============================================ -->
+  <!-- <script src="/static/js/chat/jquery.chat.js"></script> -->
+  <!-- Charts JS
+		============================================ -->
+  <script src="/static/js/charts/Chart.js"></script>
+
+  <!--  todo JS
+		============================================ -->
+  <script src="/static/js/todo/jquery.todo.js"></script>
+  <!-- plugins JS
+		============================================ -->
+  <script src="/static/js/plugins.js"></script>
+  <!--  wave JS
+		============================================ -->
+  <script src="/static/js/wave/waves.min.js"></script>
+  <script src="/static/js/wave/wave-active.js"></script>
+  <!-- main JS
+		============================================ -->
+  <script src="/static/js/main.js"></script>
+  <!-- tawk chat JS
+		============================================ -->
+  <!-- <script src="/static/js/tawk-chat.js"></script> -->
+  <script src="/static/js/dialog/sweetalert2.min.js"></script>
+  <script src="/static/js/dialog/dialog-active.js"></script>
+  <script src="/static/js/stats/sadStats.js"></script>
+  <!-- <script src="/static/js/container/booking-detail.js"></script> -->
+
+</body>
+
+</html>

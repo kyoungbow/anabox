@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Accordion | Notika - Notika Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- font awesome CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/owl.carousel.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.css">
+    <link rel="stylesheet" href="/static/css/owl.transitions.css">
+    <!-- meanmenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <!-- wave CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/wave/waves.min.css">
+    <link rel="stylesheet" href="/static/css/wave/button.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- jvectormap CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <!-- Notika icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/notika-custom-icon.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="/static/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="/static/css/dialog/sweetalert2.min.css">
+    <link rel="stylesheet" href="/static/css/dialog/dialog.css">
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Start Header Top Area -->
+    {% include "header.html" %}
+    <!-- End Header Top Area -->
+    <!-- Mobile Menu start -->
+    {% include "topMenu.html" %}
+    <!-- Mobile Menu end -->
+    <!-- Main Menu area start-->
+    <!-- Main Menu area End-->
+    <div class="accordion-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="accordion-wn-wp">
+                        <div class="accordion-hd">
+                            <h2>마이페이지</h2>
+                            <p></p>
+                        </div>
+                        <div class="row">
+                            <form action="" method="post" id="myPage">
+                                <input type="hidden" name="loginId" value="{{ session.get('loginId') }}" id="loginId"
+                                    readonly>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="accordion-stn">
+                                        <div class="panel-group" data-collapse-color="nk-green" id="accordionGreen"
+                                            role="tablist" aria-multiselectable="true">
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen1"
+                                                            aria-expanded="true">
+                                                            아이디
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen1" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="userid" class="form-control"
+                                                            placeholder="아이디" id="userid" readonly value="{{row[0]}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen2"
+                                                            aria-expanded="true">
+                                                            사용자 명
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen2" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="userName" class="form-control"
+                                                            placeholder="사용자 명" id="userName" readonly
+                                                            value="{{row[1]}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen3"
+                                                            aria-expanded="true">
+                                                            이메일
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen3" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="userEmail" class="form-control"
+                                                            placeholder="이메일" id="userEmail" readonly
+                                                            value="{{row[3]}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen4"
+                                                            aria-expanded="true">
+                                                            휴대폰 번호
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen4" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="userPhone" class="form-control"
+                                                            placeholder="휴대폰 번호" id="userPhone" readonly
+                                                            value="{{row[7]}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen5"
+                                                            aria-expanded="true">
+                                                            회사명
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen5" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="userCompany" class="form-control"
+                                                            placeholder="회사명" id="userCompany" readonly
+                                                            value="{{row[2]}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen6"
+                                                            aria-expanded="true">
+                                                            회사 소개
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen6" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="companyIntro" class="form-control"
+                                                            placeholder="회사 소개" id="companyIntro" readonly
+                                                            value="{{ '' if row[10] is none else row[10] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen7"
+                                                            aria-expanded="true">
+                                                            대표자 명
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen7" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="ceoName" class="form-control"
+                                                            placeholder="대표자 명" id="ceoName" readonly
+                                                            value="{{ '' if row[11] is none else row[11] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen8"
+                                                            aria-expanded="true">
+                                                            회사 전화번호
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen8" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="companyPhone" class="form-control"
+                                                            placeholder="회사 전화번호" id="companyPhone" readonly
+                                                            value="{{ '' if row[12] is none else row[12] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen9"
+                                                            aria-expanded="true">
+                                                            회사 팩스번호
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen9" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="companyFax" class="form-control"
+                                                            placeholder="회사 팩스번호" id="companyFax" readonly
+                                                            value="{{ '' if row[13] is none else row[13] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen10"
+                                                            aria-expanded="true">
+                                                            회사 이메일 주소
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen10" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="companyEmail" class="form-control"
+                                                            placeholder="회사 이메일 주소" id="companyEmail" readonly
+                                                            value="{{ '' if row[14] is none else row[14] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen11"
+                                                            aria-expanded="true">
+                                                            회사 홈페이지
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen11" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="companyHomepage" class="form-control"
+                                                            placeholder="회사 홈페이지" id="companyHomepage" readonly
+                                                            value="{{ '' if row[15] is none else row[15] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen12"
+                                                            aria-expanded="true">
+                                                            회사 주소
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen12" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <div style="display: flex; gap: 8px;">
+                                                            <input type="text" name="companyAddress"
+                                                                class="form-control" placeholder="회사 주소"
+                                                                id="companyAddress" readonly
+                                                                value="{{ '' if row[16] is none else row[16] }}">
+                                                            <button
+                                                                class="btn btn-info notika-btn-info btn-sm waves-effect"
+                                                                type="button" id="btnAddress"
+                                                                style="display: none;">주소검색</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                            <!-- 블럭Start -->
+                                            <div class="panel panel-collapse notika-accrodion-cus">
+                                                <div class="panel-heading" role="tab">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#accordionGreen13"
+                                                            aria-expanded="true">
+                                                            회사 상세 주소
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="accordionGreen13" class="collapse in" role="tabpanel">
+                                                    <div class="panel-body">
+                                                        <input type="text" name="companyAddressdetail"
+                                                            class="form-control" placeholder="회사 상세 주소"
+                                                            id="companyAddressdetail" readonly
+                                                            value="{{ '' if row[17] is none else row[17] }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 블럭End -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="beforeBtnModify">
+                                    <button class="btn btn-success  notika-btn-success btn-lg waves-effect"
+                                        style="float: right; margin: 30px 10px 0 0;" type="button" id="btnBack">
+                                        뒤로
+                                    </button>
+                                    <button class="btn btn-danger  notika-btn-danger  btn-lg waves-effect"
+                                        style="float: right; margin: 30px 10px 0 0;" type="button" id="btnDelete">
+                                        회원 탈퇴
+                                    </button>
+                                    <button class="btn btn-warning notika-btn-warning btn-lg waves-effect"
+                                        style="float: right; margin: 30px 10px 0 0;" type="button" id="btnModify">
+                                        수정
+                                    </button>
+                                </div>
+                                <div id="afterBtnModify" hidden>
+                                    <button class="btn btn-danger notika-btn-danger btn-lg waves-effect"
+                                        style="float: right; margin: 30px 10px 0 0;" type="button" id="btnCancel">
+                                        취소
+                                    </button>
+                                    <button class="btn btn-warning notika-btn-warning btn-lg waves-effect"
+                                        style="float: right; margin: 30px 10px 0 0;" type="button" id="btnUpdate">
+                                        수정
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Accordion area End-->
+    <!-- Start Footer area-->
+    {% include "footer.html" %}
+    <!-- End Footer area-->
+    <!-- jquery
+		============================================ -->
+    <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="/static/js/wow.min.js"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="/static/js/jquery-price-slider.js"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="/static/js/jquery.scrollUp.min.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="/static/js/meanmenu/jquery.meanmenu.js"></script>
+    <!-- counterup JS
+		============================================ -->
+    <script src="/static/js/counterup/jquery.counterup.min.js"></script>
+    <script src="/static/js/counterup/waypoints.min.js"></script>
+    <script src="/static/js/counterup/counterup-active.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="/static/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sparkline JS
+		============================================ -->
+    <script src="/static/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/static/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+		============================================ -->
+    <script src="/static/js/flot/jquery.flot.js"></script>
+    <script src="/static/js/flot/jquery.flot.resize.js"></script>
+    <script src="/static/js/flot/flot-active.js"></script>
+    <!-- knob JS
+		============================================ -->
+    <script src="/static/js/knob/jquery.knob.js"></script>
+    <script src="/static/js/knob/jquery.appear.js"></script>
+    <script src="/static/js/knob/knob-active.js"></script>
+    <!--  Chat JS
+		============================================ -->
+    <!-- <script src="/static/js/chat/jquery.chat.js"></script> -->
+    <!--  todo JS
+		============================================ -->
+    <script src="/static/js/todo/jquery.todo.js"></script>
+    <!--  wave JS
+		============================================ -->
+    <script src="/static/js/wave/waves.min.js"></script>
+    <script src="/static/js/wave/wave-active.js"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="/static/js/plugins.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="/static/js/main.js"></script>
+    <!-- tawk chat JS
+		============================================ -->
+    <!-- <script src="/static/js/tawk-chat.js"></script> -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/static/js/dialog/sweetalert2.min.js"></script>
+    <script src="/static/js/dialog/dialog-active.js"></script>
+    <script src="/static/js/myPage/myPage.js"></script>
+</body>
+
+</html>

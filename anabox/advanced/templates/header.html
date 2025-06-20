@@ -1,0 +1,94 @@
+<!-- Start Header Top Area -->
+<div class="header-top-area">
+    <div class="container">
+        <input type="hidden" name="headUserId" value="{{ session.get('loginId') }}" id="headUserId">
+        <input type="hidden" name="headUsertype" value="{{ session.get('usertype') }}" id="headUsertype">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="logo-area">
+                    <a href="{{ url_for('main.index') }}">
+                        <img src="/static/img/logo/AnaBox38.png" alt="" />
+                        <span style="font-size: 12px; padding-left: 5px; color: #F7FCFC; position: relative; top: -10px; font-weight: bold;">
+                            아껴쓰고 나눠쓰고 바꿔쓰는, AnaBox 컨테이너 공유 플랫폼
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="header-top-menu">
+                    <ul class="nav navbar-nav notika-top-nav">
+                        {% if session.get('loginId') %}
+                        <p
+                            style="position: absolute; display: inline-block;top: 20px; right: 120px; font-size: 15px; font-weight: 600; color: #F7FCFC;">
+                            환영합니다,
+                            <span style="font-size: 18px;">&nbsp;&nbsp;{{session.get('loginUserName') }}</span>님!
+                        </p>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+                                class="nav-link dropdown-toggle">
+                                <span>
+                                    <i class="notika-icon notika-chat"></i>
+                                </span>
+                                <div class="messengerCnt">
+                                    <!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> -->
+                                </div>
+                            </a>
+                            <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
+                                <div class="hd-message-info" id="messengerDiv" style="height: 300px; overflow: auto;">
+
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 모달내부 -->
+                        <!-- <div id="modalContainer">
+
+                            </div> -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-large">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <h2 style="font-size: 20px; text-align: center; margin-bottom: 20px;">메신저</h2>
+                                    <div class="modal-body">
+                                        <div class="messenger-scrollbar"
+                                            style="height: 540px; overflow: hidden; padding-bottom: 5px;">
+                                            <ul id="messages" class="conversation-list">
+                                                <!-- 메시지 li 요소들 -->
+                                            </ul>
+                                        </div>
+                                        <input id="message" class="form-control" placeholder="메시지를 입력하세요.">
+                                        <div class="message-send">
+                                            <button id="btnSend" style="border-radius: 3px;"
+                                                class="btn btn-md btn-primary btn-block notika-chat-btn">보내기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="nav-item nc-al">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+                                class="nav-link dropdown-toggle">
+                                <span><i class="notika-icon notika-alarm"></i></span>
+                                <div class="applyCnt">
+                                    <!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>1</span></div> -->
+                                </div>
+                            </a>
+                            <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
+                                <div class="hd-message-info" id="alarmDiv" style="height: 300px; overflow: auto;">
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Header Top Area -->
+<script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
+<script src="/static/js/main/header.js"></script>

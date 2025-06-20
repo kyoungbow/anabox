@@ -1,0 +1,280 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Login Register | Notika - Notika Admin Template</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- favicon
+		============================================ -->
+  <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
+  <!-- Google Fonts
+		============================================ -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+  <!-- Bootstrap CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <!-- font awesome CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  <!-- owl.carousel CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/owl.carousel.css">
+  <link rel="stylesheet" href="/static/css/owl.theme.css">
+  <link rel="stylesheet" href="/static/css/owl.transitions.css">
+  <!-- animate CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <!-- normalize CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <!-- mCustomScrollbar CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/scrollbar/jquery.mCustomScrollbar.min.css">
+  <!-- wave CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/wave/waves.min.css">
+  <!-- Notika icon CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/notika-custom-icon.css">
+  <!-- main CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/main.css">
+  <!-- style CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- responsive CSS
+		============================================ -->
+  <link rel="stylesheet" href="/static/css/responsive.css">
+  <!-- modernizr JS
+		============================================ -->
+  <script src="/static/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href="/static/css/dialog/sweetalert2.min.css">
+  <link rel="stylesheet" href="/static/css/dialog/dialog.css">
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <!-- Login Register area Start-->
+  {% include "header.html" %}
+  <div class="login-content">
+    <!-- Login -->
+    <div class="nk-block toggled" id="l-login">
+      <form action="{{url_for('auth.login')}}" method="post" id="loginForm">
+        <div class="nk-form">
+          <div class="input-group">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
+            <div class="nk-int-st">
+              <input type="text" name="userId" class="form-control" placeholder="아이디">
+            </div>
+          </div>
+          <div class="input-group mg-t-15">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
+            <div class="nk-int-st">
+              <input type="password" name="password" class="form-control" placeholder="비밀번호">
+            </div>
+          </div>
+          <button class="btn btn-login btn-success btn-float" type="submit">
+            <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
+          </button>
+        </div>
+
+        <div class="nk-navigation nk-lg-ic">
+          <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i
+              class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
+          <!-- <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a> -->
+        </div>
+      </form>
+    </div>
+
+    <!-- Register -->
+    <div class="nk-block" id="l-register">
+      <form action="{{url_for('auth.register')}}" method="post" id="registerForm">
+        <div class="nk-form">
+          <div class="input-group">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
+            <div class="nk-int-st">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="text" id="userId" name="userId" class="form-control" placeholder="아이디"
+                  style="flex: 1; height: 38px;">
+                <button class="btn btn-warning notika-btn-warning btn-sm waves-effect" type="button" id="chkId">
+                  아이디 확인
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mg-t-15">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
+            <div class="nk-int-st">
+              <input type="text" id="userName" name="userName" class="form-control" placeholder="이름">
+            </div>
+          </div>
+          <div class="input-group mg-t-15">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-house"></i></span>
+            <div class="nk-int-st">
+              <input type="text" id="company" name="company" class="form-control" placeholder="회사명">
+            </div>
+          </div>
+
+          <div class="input-group mg-t-15">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-phone"></i></span>
+            <div class="nk-int-st">
+              <input type="text" id="phone" name="phone" class="form-control" placeholder="휴대폰 번호">
+            </div>
+          </div>
+
+          <div class="input-group mg-t-15">
+            <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
+            <div class="nk-int-st">
+              <input type="text" id="eMail" name="eMail" class="form-control" placeholder="이메일">
+            </div>
+          </div>
+
+
+          <div class="input-group mg-t-15">
+            <span class="input-group-addon nk-ic-st-pro">
+              <i class="notika-icon notika-edit"></i>
+            </span>
+            <div class="nk-int-st">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="password" id="password" name="password" class="form-control" placeholder="비밀번호"
+                  style="flex: 1;">
+                <button class="btn btn-warning notika-btn-warning btn-sm waves-effect" type="button" id="chkPw">
+                  비밀번호 확인
+                </button>
+              </div>
+              <input type="password" id="password2" name="password2" class="form-control" placeholder="비밀번호 확인"
+                style="margin-top: 10px;">
+            </div>
+          </div>
+          <div class="dropdown-trig-sgn mg-t-15">
+            <button class="btn triger-zoomIn waves-effect" data-toggle="dropdown" aria-expanded="false">
+              사용자 유형
+            </button>
+            <input type="hidden" name="userType" id="userType" value="">
+            <ul class="dropdown-menu triger-zoomIn-dp" id="userUl">
+              <li data-value="1"><a>컨테이너 등록</a></li>
+              <li data-value="2"><a>컨테이너 이용</a></li>
+            </ul>
+          </div>
+
+
+          <button class="btn btn-login btn-success btn-float" type="submit">
+            <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
+          </button>
+        </div>
+
+        <div class="nk-navigation rg-ic-stl">
+          <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i
+              class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
+          <!-- <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Forgot Password</span></a> -->
+        </div>
+      </form>
+    </div>
+
+    <!-- Forgot Password -->
+    <!-- <div class="nk-block" id="l-forget-password">
+          <form action="" method="post">
+            <div class="nk-form">
+                <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
+
+                <div class="input-group">
+                    <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-mail"></i></span>
+                    <div class="nk-int-st">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                    </div>
+                </div>
+
+                <a href="#l-login" data-ma-action="nk-login-switch" data-ma-block="#l-login" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow"></i></a>
+            </div>
+
+            <div class="nk-navigation nk-lg-ic rg-ic-stl">
+                <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-login"><i class="notika-icon notika-right-arrow"></i> <span>Sign in</span></a>
+                <a href="" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="notika-icon notika-plus-symbol"></i> <span>Register</span></a>
+            </div>
+          </form>
+        </div> -->
+  </div>
+  <!-- Login Register area End-->
+  <!-- jquery
+		============================================ -->
+  <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+  <!-- bootstrap JS
+		============================================ -->
+  <script src="/static/js/bootstrap.min.js"></script>
+  <!-- wow JS
+		============================================ -->
+  <script src="/static/js/wow.min.js"></script>
+  <!-- price-slider JS
+		============================================ -->
+  <script src="/static/js/jquery-price-slider.js"></script>
+  <!-- owl.carousel JS
+		============================================ -->
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <!-- scrollUp JS
+		============================================ -->
+  <script src="/static/js/jquery.scrollUp.min.js"></script>
+  <!-- meanmenu JS
+		============================================ -->
+  <script src="/static/js/meanmenu/jquery.meanmenu.js"></script>
+  <!-- counterup JS
+		============================================ -->
+  <script src="/static/js/counterup/jquery.counterup.min.js"></script>
+  <script src="/static/js/counterup/waypoints.min.js"></script>
+  <script src="/static/js/counterup/counterup-active.js"></script>
+  <!-- mCustomScrollbar JS
+		============================================ -->
+  <script src="/static/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- sparkline JS
+		============================================ -->
+  <script src="/static/js/sparkline/jquery.sparkline.min.js"></script>
+  <script src="/static/js/sparkline/sparkline-active.js"></script>
+  <!-- flot JS
+		============================================ -->
+  <script src="/static/js/flot/jquery.flot.js"></script>
+  <script src="/static/js/flot/jquery.flot.resize.js"></script>
+  <script src="/static/js/flot/flot-active.js"></script>
+  <!-- knob JS
+		============================================ -->
+  <script src="/static/js/knob/jquery.knob.js"></script>
+  <script src="/static/js/knob/jquery.appear.js"></script>
+  <script src="/static/js/knob/knob-active.js"></script>
+  <!--  Chat JS
+		============================================ -->
+  <!-- <script src="/static/js/chat/jquery.chat.js"></script> -->
+  <!--  wave JS
+		============================================ -->
+  <script src="/static/js/wave/waves.min.js"></script>
+  <script src="/static/js/wave/wave-active.js"></script>
+  <!-- icheck JS
+		============================================ -->
+  <script src="/static/js/icheck/icheck.min.js"></script>
+  <script src="/static/js/icheck/icheck-active.js"></script>
+  <!--  todo JS
+		============================================ -->
+  <script src="/static/js/todo/jquery.todo.js"></script>
+  <!-- Login JS
+		============================================ -->
+  <script src="/static/js/login/login-register.js"></script>
+  <script src="/static/js/login/login-action.js"></script>
+  <!-- plugins JS
+		============================================ -->
+  <script src="/static/js/plugins.js"></script>
+  <!-- main JS
+		============================================ -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/dialog/sweetalert2.min.js"></script>
+  <script src="/static/js/dialog/dialog-active.js"></script>
+  <script>
+    const message = '{{ message|safe }}'; // {{ message }} : render_template('path', message= ' ... ')에서 전달
+    if (message) {
+      swal(message);
+    }
+  </script>
+</body>
+
+</html>
